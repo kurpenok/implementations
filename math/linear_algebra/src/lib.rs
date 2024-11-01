@@ -43,6 +43,14 @@ pub fn vector_sum(vectors: &Vec<&Vector>) -> Option<Vec<f64>> {
     None
 }
 
+pub fn scalar_multiply(c: f64, v: &Vector) -> Vector {
+    let mut w: Vec<f64> = Vec::new();
+    for i in 0..v.len() {
+        w.push(c * v[i]);
+    }
+    w
+}
+
 #[cfg(test)]
 mod test {
     use super::*;
