@@ -1,8 +1,8 @@
-use std::ops::Mul;
+use num::Num;
 
 pub fn scalar_multiply<T>(c: T, v: &[T]) -> Vec<T>
 where
-    T: Copy + Default + Mul<Output = T>,
+    T: Copy + Num,
 {
     v.iter().map(|&n| c * n).collect()
 }

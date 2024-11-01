@@ -1,14 +1,14 @@
-use std::ops::Add;
+use num::Num;
 
 pub fn vector_sum<T>(vectors: &[&[T]]) -> Option<Vec<T>>
 where
-    T: Copy + Default + Add<Output = T>,
+    T: Copy + Num,
 {
     if vectors.len() == 0 || !vectors.iter().all(|v| v.len() == vectors[0].len()) {
         return None;
     }
 
-    let mut result = vec![T::default(); vectors[0].len()];
+    let mut result = vec![T::zero(); vectors[0].len()];
     for v in vectors {
         for (i, &value) in v.iter().enumerate() {
             result[i] = result[i] + value;

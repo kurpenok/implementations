@@ -1,8 +1,8 @@
-use std::ops::Sub;
+use num::Num;
 
 pub fn subtract<T>(v: &[T], w: &[T]) -> Option<Vec<T>>
 where
-    T: Copy + Sub<Output = T>,
+    T: Copy + Num,
 {
     if v.len() != w.len() {
         return None;

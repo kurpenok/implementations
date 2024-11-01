@@ -1,8 +1,8 @@
-use std::ops::Add;
+use num::Num;
 
 pub fn add<T>(v: &[T], w: &[T]) -> Option<Vec<T>>
 where
-    T: Copy + Add<Output = T>,
+    T: Copy + Num,
 {
     if v.len() != w.len() {
         return None;
