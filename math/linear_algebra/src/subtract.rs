@@ -1,6 +1,9 @@
 use std::ops::Sub;
 
-pub fn subtract<T: Copy + Sub<Output = T>>(v: &[T], w: &[T]) -> Option<Vec<T>> {
+pub fn subtract<T>(v: &[T], w: &[T]) -> Option<Vec<T>>
+where
+    T: Copy + Sub<Output = T>,
+{
     if v.len() != w.len() {
         return None;
     }

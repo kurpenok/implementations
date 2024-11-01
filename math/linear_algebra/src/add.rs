@@ -1,6 +1,9 @@
 use std::ops::Add;
 
-pub fn add<T: Copy + Add<Output = T>>(v: &[T], w: &[T]) -> Option<Vec<T>> {
+pub fn add<T>(v: &[T], w: &[T]) -> Option<Vec<T>>
+where
+    T: Copy + Add<Output = T>,
+{
     if v.len() != w.len() {
         return None;
     }
