@@ -5,12 +5,12 @@ pub fn dot<T: Float>(v: &Vec<T>, w: &Vec<T>) -> Option<T> {
         return None;
     }
 
-    let result: T = v
-        .iter()
-        .zip(w.iter())
-        .map(|(&x, &y)| x * y)
-        .fold(T::zero(), |result, x| result + x);
-    Some(result)
+    Some(
+        v.iter()
+            .zip(w.iter())
+            .map(|(&x, &y)| x * y)
+            .fold(T::zero(), |result, x| result + x),
+    )
 }
 
 #[cfg(test)]
