@@ -1,6 +1,6 @@
 use num::Float;
 
-use crate::sum_of_squares::sum_of_squares;
+use crate::sum_of_squares;
 
 pub fn magnitude<T: Float>(v: &Vec<T>) -> Option<T> {
     match sum_of_squares(v) {

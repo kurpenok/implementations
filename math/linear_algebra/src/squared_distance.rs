@@ -1,6 +1,6 @@
 use num::Float;
 
-use crate::{subtract::subtract, sum_of_squares::sum_of_squares};
+use crate::{subtract, sum_of_squares};
 
 pub fn squared_distance<T: Float>(v: &Vec<T>, w: &Vec<T>) -> Option<T> {
     match subtract(v, w) {

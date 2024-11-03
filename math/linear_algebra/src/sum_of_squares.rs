@@ -1,6 +1,6 @@
 use num::Float;
 
-use crate::dot::dot;
+use crate::dot;
 
 pub fn sum_of_squares<T: Float>(v: &Vec<T>) -> Option<T> {
     dot(v, v)

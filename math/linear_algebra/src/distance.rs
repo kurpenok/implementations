@@ -1,6 +1,6 @@
 use num::Float;
 
-use crate::{magnitude::magnitude, subtract::subtract};
+use crate::{magnitude, subtract};
 
 pub fn distance<T: Float>(v: &Vec<T>, w: &Vec<T>) -> Option<T> {
     match subtract(v, w) {
