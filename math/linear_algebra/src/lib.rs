@@ -2,6 +2,7 @@ pub mod add;
 pub mod dot;
 pub mod magnitude;
 pub mod scalar_multiply;
+pub mod squared_distance;
 pub mod subtract;
 pub mod sum_of_squares;
 pub mod vector_mean;
