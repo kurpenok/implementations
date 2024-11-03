@@ -1,9 +1,6 @@
-use num::Num;
+use num::Float;
 
-pub fn scalar_multiply<T>(c: T, v: &[T]) -> Vec<T>
-where
-    T: Copy + Num,
-{
+pub fn scalar_multiply<T: Float>(c: T, v: &[T]) -> Vec<T> {
     v.iter().map(|&n| c * n).collect()
 }
 
@@ -13,7 +10,7 @@ mod test {
 
     #[test]
     fn test_vector_scalar_multiply() {
-        assert_eq!(scalar_multiply(1, &vec![1, 2, 3]), [1, 2, 3]);
         assert_eq!(scalar_multiply(2., &vec![1., 2., 3.]), [2., 4., 6.]);
+        assert_eq!(scalar_multiply(4., &vec![2., 4., 8.]), [8., 16., 32.]);
     }
 }

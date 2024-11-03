@@ -1,9 +1,6 @@
-use num::Num;
+use num::Float;
 
-pub fn dot<T>(v: &Vec<T>, w: &Vec<T>) -> Option<T>
-where
-    T: Copy + Num,
-{
+pub fn dot<T: Float>(v: &Vec<T>, w: &Vec<T>) -> Option<T> {
     if v.len() != w.len() {
         return None;
     }
@@ -22,11 +19,8 @@ mod test {
 
     #[test]
     fn test_vector_dot() {
-        assert_eq!(dot(&vec![], &vec![-3, 2]), None);
+        assert_eq!(dot(&vec![], &vec![-3., 2.]), None);
         assert_eq!(dot(&vec![1., 2.], &vec![4.]), None);
-
-        assert_eq!(dot(&vec![1, 2], &vec![4, 5]), Some(14));
-        assert_eq!(dot(&vec![3, -2], &vec![-3, 2]), Some(-13));
 
         assert_eq!(dot(&vec![1., 2.], &vec![4., 5.]), Some(14.));
         assert_eq!(dot(&vec![3., -2.], &vec![-3., 2.]), Some(-13.));

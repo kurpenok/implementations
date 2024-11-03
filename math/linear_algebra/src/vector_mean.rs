@@ -1,9 +1,6 @@
-use num::Num;
+use num::Float;
 
-pub fn vector_mean<T>(vectors: &[&[T]]) -> Option<Vec<T>>
-where
-    T: Copy + Num,
-{
+pub fn vector_mean<T: Float>(vectors: &[&[T]]) -> Option<Vec<T>> {
     if vectors.len() == 0 || !vectors.iter().all(|v| v.len() == vectors[0].len()) {
         return None;
     }
@@ -31,15 +28,10 @@ mod test {
 
     #[test]
     fn test_vector_mean() {
-        let a = vec![1, 2, 3, 4];
-        let b = vec![2, 4, 6, 8, 10];
-        let vectors: Vec<&[i32]> = vec![&a, &b];
+        let a = vec![1., 2., 3., 4.];
+        let b = vec![2., 4., 6., 8., 10.];
+        let vectors: Vec<&[f32]> = vec![&a, &b];
         assert_eq!(vector_mean(&vectors), None);
-
-        let a = vec![2, 2, 4, 4, 6];
-        let b = vec![2, 4, 6, 8, 10];
-        let vectors: Vec<&[i32]> = vec![&a, &b];
-        assert_eq!(vector_mean(&vectors), Some(vec![2, 3, 5, 6, 8]));
 
         let a = vec![2., 2., 4., 4., 6.];
         let b = vec![2., 4., 6., 8., 10.];
