@@ -1,0 +1,21 @@
+pub mod add;
+pub mod distance;
+pub mod dot;
+pub mod magnitude;
+pub mod scalar_multiply;
+pub mod squared_distance;
+pub mod subtract;
+pub mod sum_of_squares;
+pub mod vector_mean;
+pub mod vector_sum;
+
+pub use add::add;
+pub use distance::distance;
+pub use dot::dot;
+pub use magnitude::magnitude;
+pub use scalar_multiply::scalar_multiply;
+pub use squared_distance::squared_distance;
+pub use subtract::subtract;
+pub use sum_of_squares::sum_of_squares;
+pub use vector_mean::vector_mean;
+pub use vector_sum::vector_sum;

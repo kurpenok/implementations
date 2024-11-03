@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "linear_algebra",
+]
+resolver = "2"
