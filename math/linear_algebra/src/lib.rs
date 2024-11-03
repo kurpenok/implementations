@@ -1,4 +1,5 @@
 pub mod add;
+pub mod distance;
 pub mod dot;
 pub mod magnitude;
 pub mod scalar_multiply;
